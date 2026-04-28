@@ -164,8 +164,8 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
                 }
             }}
         >
-            <DialogContent className="overflow-hidden border-0 bg-transparent p-0 shadow-none sm:max-w-[620px]">
-                <div className="relative overflow-hidden rounded-[36px] border border-white/70 bg-white shadow-2xl">
+            <DialogContent className="p-0 sm:max-w-[620px]">
+                <div className="max-h-[85vh] overflow-y-auto px-6 py-8">
                     <div className="absolute inset-x-0 top-0 h-36 bg-[radial-gradient(circle_at_20%_10%,rgba(109,58,178,0.22),transparent_38%),radial-gradient(circle_at_90%_0%,rgba(236,72,153,0.16),transparent_34%)]" />
 
                     <div className="relative p-6 md:p-8">
