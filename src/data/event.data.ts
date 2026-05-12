@@ -115,6 +115,40 @@ export const eventDictionary = {
         validationTooFast: "Слишком быстрая отправка. Попробуйте ещё раз.",
         validationCaptcha: "Подтвердите, что вы не робот",
         captchaLabel: "Я не робот",
+
+        // ru
+        speakersLabel: "Лекторы",
+        speakersTitle: "3 лектора мастер-класса",
+        speakersText:
+            "В программе выступят приглашённый международный эксперт и ведущие специалисты клиники Дауыс.",
+        speakerLabel: "Лектор",
+        speakerTopicLabel: "Тема выступления",
+
+        speaker1Name: "Профессор Dr. Kayhan Ozturk",
+        speaker1Role:
+            "Врач-оториноларинголог, хирург головы и шеи, международный эксперт из Турции",
+        speaker1Topic:
+            "Методы диагностики и лечения пациентов с нарушениями голоса и глотания",
+
+        speaker2Name: "Тогузбаева Динара Еркеновна",
+        speaker2Role:
+            "Основатель и главный врач клиники, профессор, к.м.н., врач высшей категории, ЛОР, фониатр, хирург, национальный координатор по Казахстану Европейского союза фониатров",
+        speaker2Topic: "Рубцовый стеноз гортани",
+
+        speaker3Name: "Тураева Алия Ганиевна",
+        speaker3Role:
+            "Магистр медицинских наук, основатель клиники ЛОР центр «Дауыс», ассистент кафедры оториноларингологии НАО «МУА»",
+        speaker3Topic:
+            "Стробоскопия: современный метод диагностики голосового аппарата",
+        // ru
+        countdownLabel: "До мероприятия",
+        countdownTitle: "До мастер-класса осталось",
+        countdownText:
+            "Регистрация открыта, но количество мест ограничено. Рекомендуем оставить заявку заранее.",
+        countdownDays: "дней",
+        countdownHours: "часов",
+        countdownMinutes: "мин",
+        countdownSeconds: "сек",
     },
 
     kz: {
@@ -228,6 +262,40 @@ export const eventDictionary = {
         validationTooFast: "Өтінім тым тез жіберілді. Қайтадан көріңіз.",
         validationCaptcha: "Робот емес екеніңізді растаңыз",
         captchaLabel: "Мен робот емеспін",
+
+        // kz
+        speakersLabel: "Лекторлар",
+        speakersTitle: "Мастер-класстың 3 лекторы",
+        speakersText:
+            "Бағдарламада шақырылған халықаралық сарапшы және Дауыс клиникасының жетекші мамандары баяндама жасайды.",
+        speakerLabel: "Лектор",
+        speakerTopicLabel: "Баяндама тақырыбы",
+
+        speaker1Name: "Профессор Dr. Kayhan Ozturk",
+        speaker1Role:
+            "Оториноларинголог, бас және мойын хирургы, Түркиядан келген халықаралық сарапшы",
+        speaker1Topic:
+            "Дауыс және жұтыну бұзылыстары бар пациенттерді диагностикалау және емдеу әдістері",
+
+        speaker2Name: "Тогузбаева Динара Еркеновна",
+        speaker2Role:
+            "Клиниканың негізін қалаушы және бас дәрігері, профессор, м.ғ.к., жоғары санатты дәрігер, ЛОР, фониатр, хирург, Қазақстан бойынша Еуропалық фониатрлар одағының ұлттық координаторы",
+        speaker2Topic: "Көмейдің тыртықты стенозы",
+
+        speaker3Name: "Тураева Алия Ганиевна",
+        speaker3Role:
+            "Медицина ғылымдарының магистрі, «Дауыс» ЛОР орталығы клиникасының негізін қалаушы, НАО «МУА» оториноларингология кафедрасының ассистенті",
+        speaker3Topic:
+            "Стробоскопия: дауыс аппаратын диагностикалаудың заманауи әдісі",
+        // kz
+        countdownLabel: "Іс-шараға дейін",
+        countdownTitle: "Мастер-классқа дейін қалды",
+        countdownText:
+            "Тіркелу ашық, бірақ орын саны шектеулі. Өтінімді алдын ала қалдыруды ұсынамыз.",
+        countdownDays: "күн",
+        countdownHours: "сағ",
+        countdownMinutes: "мин",
+        countdownSeconds: "сек",
     },
 
     en: {
@@ -341,5 +409,39 @@ export const eventDictionary = {
         validationTooFast: "Submission is too fast. Please try again.",
         validationCaptcha: "Please confirm that you are not a robot",
         captchaLabel: "I am not a robot",
+
+        // en
+        speakersLabel: "Speakers",
+        speakersTitle: "3 masterclass speakers",
+        speakersText:
+            "The program will feature an invited international expert and leading specialists of Dauys Clinic.",
+        speakerLabel: "Speaker",
+        speakerTopicLabel: "Lecture topic",
+
+        speaker1Name: "Professor Dr. Kayhan Ozturk",
+        speaker1Role:
+            "ENT specialist, head and neck surgeon, invited international expert from Turkey",
+        speaker1Topic:
+            "Methods of diagnosis and treatment of patients with voice and swallowing disorders",
+
+        speaker2Name: "Dinara Toguzbayeva",
+        speaker2Role:
+            "Founder and chief physician of the clinic, professor, Candidate of Medical Sciences, highest-category ENT doctor, phoniatrician, surgeon, national coordinator for Kazakhstan of the European Union of Phoniatricians",
+        speaker2Topic: "Cicatricial laryngeal stenosis",
+
+        speaker3Name: "Aliya Turaeva",
+        speaker3Role:
+            "MSc in Medical Sciences, founder of Dauys ENT Center clinic, assistant of the Department of Otorhinolaryngology at Astana Medical University",
+        speaker3Topic:
+            "Stroboscopy: a modern diagnostic method of the vocal apparatus",
+        // en
+        countdownLabel: "Until the event",
+        countdownTitle: "Time left until the masterclass",
+        countdownText:
+            "Registration is open, but seats are limited. We recommend submitting your application in advance.",
+        countdownDays: "days",
+        countdownHours: "hrs",
+        countdownMinutes: "min",
+        countdownSeconds: "sec",
     },
 } as const;
