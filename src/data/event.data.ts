@@ -158,6 +158,10 @@ export const eventDictionary = {
 
         roomLabel: "Зал",
         roomValue: "09 07",
+
+        speaker4Name: "Исин Жігер Жумабекович",
+        speaker4Role: "Магистр медицинских наук",
+        speaker4Topic: "Опыт лечения двустороннего паралича голосовых складок",
     },
 
     kz: {
@@ -274,9 +278,6 @@ export const eventDictionary = {
 
         // kz
         speakersLabel: "Лекторлар",
-        speakersTitle: "Мастер-класстың 3 лекторы",
-        speakersText:
-            "Бағдарламада шақырылған халықаралық сарапшы және Дауыс клиникасының жетекші мамандары баяндама жасайды.",
         speakerLabel: "Лектор",
         speakerTopicLabel: "Баяндама тақырыбы",
 
@@ -313,6 +314,14 @@ export const eventDictionary = {
 
         roomLabel: "Зал",
         roomValue: "09 07",
+
+        speakersTitle: "Мастер-класстың 4 лекторы",
+        speakersText:
+            "Бағдарламада шақырылған халықаралық сарапшы және ЛОР-практика, фониатрия мен дауыс бұзылыстарын диагностикалау саласындағы мамандар баяндама жасайды.",
+
+        speaker4Name: "Исин Жігер Жумабекович",
+        speaker4Role: "Медицина ғылымдарының магистрі",
+        speaker4Topic: "Дауыс қатпарларының екіжақты параличін емдеу тәжірибесі",
     },
 
     en: {
@@ -429,9 +438,13 @@ export const eventDictionary = {
 
         // en
         speakersLabel: "Speakers",
-        speakersTitle: "3 masterclass speakers",
+        speakersTitle: "4 masterclass speakers",
         speakersText:
-            "The program will feature an invited international expert and leading specialists of Dauys Clinic.",
+            "The program will feature an invited international expert and specialists in ENT practice, phoniatrics and diagnostics of voice disorders.",
+
+        speaker4Name: "Zhiger Issin Zhumabekovich",
+        speaker4Role: "MSc in Medical Sciences",
+        speaker4Topic: "Experience in the treatment of bilateral vocal fold paralysis",
         speakerLabel: "Speaker",
         speakerTopicLabel: "Lecture topic",
 
