@@ -15,6 +15,9 @@ import {
     Stethoscope,
     Users,
     UserRound,
+    Clock3,
+    Building2,
+    DoorOpen,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -57,6 +60,16 @@ export default function Page() {
             label: t.venueLabel,
             value: t.venueValue,
             link: t.venueLink,
+        },
+        {
+            icon: Building2,
+            label: t.hallLabel,
+            value: t.hallValue,
+        },
+        {
+            icon: Clock3,
+            label: t.startTimeLabel,
+            value: t.startTimeValue,
         },
         { icon: Languages, label: t.langLabel, value: t.langValue },
         { icon: Users, label: t.limitLabel, value: t.limitValue },
@@ -219,7 +232,7 @@ export default function Page() {
                 </div>
             </section>
 
-            <section className="relative mx-auto grid max-w-7xl grid-cols-1 gap-4 px-5 pb-12 md:grid-cols-4 md:px-8">
+            <section className="relative mx-auto grid max-w-7xl grid-cols-1 gap-4 px-5 pb-12 sm:grid-cols-2 lg:grid-cols-4 md:px-8">
                 {stats.map((item) => {
                     const Icon = item.icon;
 
