@@ -109,17 +109,20 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
         }
 
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbyQBQ4Z-_8JLr8dhTptYbD22t4crGvVSUJNMlufJyQGMLQ-v_IvC1Cx0R1ClabFONDdaQ/exec", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    ...form,
-                    lang,
-                    event: "Masterclass Astana Opera 09.07.2026",
-                }),
-            });
+            const response = await fetch(
+                "https://script.google.com/macros/s/AKfycbyQBQ4Z-_8JLr8dhTptYbD22t4crGvVSUJNMlufJyQGMLQ-v_IvC1Cx0R1ClabFONDdaQ/exec",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "text/plain;charset=utf-8",
+                    },
+                    body: JSON.stringify({
+                        ...form,
+                        lang,
+                        event: "Masterclass Astana Opera 09.07.2026",
+                    }),
+                }
+            );
 
             const data = await response.json();
 
@@ -279,7 +282,7 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
                                     type="text"
                                     style={{ display: "none" }}
                                     value={form.position}
-                                    onChange={() => {}}
+                                    onChange={() => { }}
                                 />
 
                                 <Textarea
