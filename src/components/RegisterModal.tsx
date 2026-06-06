@@ -204,7 +204,7 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
                                 </div>
 
                                 <p className="mt-5 text-lg font-semibold leading-8 text-slate-700">
-                                    {successMessage ||
+                                    {
                                         (waitlist ? t.registrationClosedText : t.successText)}
                                 </p>
 
