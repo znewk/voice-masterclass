@@ -74,7 +74,11 @@ export async function POST(request: Request) {
 
         return NextResponse.json({
             ok: true,
-            message: "Application saved",
+            message: data.message || "Application saved",
+            registrationClosed: Boolean(data.registrationClosed),
+            status: data.status,
+            count: data.count,
+            isDuplicate: data.isDuplicate,
         });
     } catch (error) {
         return NextResponse.json(

@@ -48,7 +48,12 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
     const [form, setForm] = useState<FormState>(initialForm);
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [waitlist, setWaitlist] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
     const [error, setError] = useState("");
+
+    const [isHuman, setIsHuman] = useState(false);
+    const [openedAt, setOpenedAt] = useState(Date.now());
 
     const handleChange = (field: keyof FormState, value: string) => {
         setForm((prev) => ({ ...prev, [field]: value }));
@@ -59,6 +64,7 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
         event.preventDefault();
         setLoading(true);
         setError("");
+
         if (form.fullName.trim().length < 3) {
             setError(t.validationFullName);
             setLoading(false);
@@ -101,49 +107,44 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
             setLoading(false);
             return;
         }
+
         try {
-            const response = await fetch(
-                "https://script.google.com/macros/s/AKfycbyQBQ4Z-_8JLr8dhTptYbD22t4crGvVSUJNMlufJyQGMLQ-v_IvC1Cx0R1ClabFONDdaQ/exec",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "text/plain;charset=utf-8",
-                    },
-                    body: JSON.stringify({
-                        ...form,
-                        lang,
-                        event: "Masterclass Astana Opera 09.07.2026",
-                    }),
-                }
-            );
+            const response = await fetch("/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    ...form,
+                    lang,
+                    event: "Masterclass Astana Opera 09.07.2026",
+                }),
+            });
 
             const data = await response.json();
 
-            if (!data.ok) {
+            if (!response.ok || !data.ok) {
                 throw new Error(data.message || t.errorText);
             }
 
             if (data.registrationClosed) {
-                setError(data.message || t.registrationClosedText);
+                setWaitlist(true);
+                setSuccessMessage(data.message || t.registrationClosedText);
                 setForm(initialForm);
                 return;
             }
 
             setSuccess(true);
+            setSuccessMessage(data.message || t.successText);
             setForm(initialForm);
 
-            // 🔥 можно сохранить количество
             console.log("Зарегистрировано:", data.count);
-
         } catch (err) {
             setError(err instanceof Error ? err.message : t.errorText);
         } finally {
             setLoading(false);
         }
     };
-
-    const [isHuman, setIsHuman] = useState(false);
-    const [openedAt, setOpenedAt] = useState(Date.now());
 
     return (
         <Dialog
@@ -152,12 +153,14 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
                 onOpenChange(value);
 
                 if (value) {
-                    setOpenedAt(Date.now()); // фиксируем время открытия
+                    setOpenedAt(Date.now());
                 }
 
                 if (!value) {
                     setTimeout(() => {
                         setSuccess(false);
+                        setWaitlist(false);
+                        setSuccessMessage("");
                         setError("");
                         setIsHuman(false);
                     }, 250);
@@ -175,22 +178,31 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
                             </div>
 
                             <DialogTitle className="text-3xl font-black tracking-tight text-slate-950 md:text-4xl">
-                                {success ? t.successTitle : t.formTitle}
+                                {waitlist
+                                    ? t.registrationClosedTitle
+                                    : success
+                                        ? t.successTitle
+                                        : t.formTitle}
                             </DialogTitle>
 
                             <DialogDescription className="pt-2 text-base leading-7 text-slate-500">
-                                {success ? t.successText : t.formDescription}
+                                {waitlist
+                                    ? t.registrationClosedText
+                                    : success
+                                        ? t.successText
+                                        : t.formDescription}
                             </DialogDescription>
                         </DialogHeader>
 
-                        {success ? (
+                        {success || waitlist ? (
                             <div className="mt-8 rounded-[28px] bg-[#FAF8FF] p-6">
                                 <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-[#6D3AB2] text-white">
                                     <CheckCircle2 size={30} />
                                 </div>
 
                                 <p className="mt-5 text-lg font-semibold leading-8 text-slate-700">
-                                    {t.successText}
+                                    {successMessage ||
+                                        (waitlist ? t.registrationClosedText : t.successText)}
                                 </p>
 
                                 <Button
@@ -262,18 +274,21 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
                                         placeholder={t.position}
                                     />
                                 </div>
+
                                 <input
                                     type="text"
                                     style={{ display: "none" }}
                                     value={form.position}
-                                    onChange={() => { }}
+                                    onChange={() => {}}
                                 />
+
                                 <Textarea
                                     value={form.comment}
                                     onChange={(e) => handleChange("comment", e.target.value)}
                                     className="min-h-28 resize-none rounded-2xl border-slate-200 bg-slate-50 text-base"
                                     placeholder={t.comment}
                                 />
+
                                 <label className="mt-2 flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700">
                                     <input
                                         type="checkbox"

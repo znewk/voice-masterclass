@@ -104,8 +104,6 @@ export const eventDictionary = {
         successText: "Спасибо! Организаторы свяжутся с вами для подтверждения участия.",
         errorText: "Не удалось отправить заявку. Попробуйте позже.",
 
-        registrationClosedText:
-            "Регистрация уже закрыта, но заявка сохранена. С вами свяжутся, если появится место.",
         notARobot: "Я не робот",
         validationFullName: "Введите корректное ФИО",
         validationComment: "Введите корректный комментарий",
@@ -162,6 +160,11 @@ export const eventDictionary = {
         speaker4Name: "Исин Жігер Жумабекович",
         speaker4Role: "Магистр медицинских наук",
         speaker4Topic: "Опыт лечения двустороннего паралича голосовых складок",
+
+        registrationClosedTitle: "Места закончились",
+        registrationClosedText:
+            "К сожалению, основные места уже закончились. Ваша заявка сохранена в резервный список. Мы свяжемся с вами, если появится место.",
+
     },
 
     kz: {
@@ -264,8 +267,6 @@ export const eventDictionary = {
         successText: "Рақмет! Ұйымдастырушылар қатысуыңызды растау үшін сізбен байланысады.",
         errorText: "Өтінімді жіберу мүмкін болмады. Кейінірек қайталап көріңіз.",
 
-        registrationClosedText:
-            "Тіркелу жабылды, бірақ өтінім сақталды. Орын пайда болса, сізбен байланысамыз.",
         notARobot: "Мен робот емеспін",
         validationFullName: "Аты-жөніңізді дұрыс енгізіңіз",
         validationComment: "Пікірді дұрыс енгізіңіз",
@@ -321,6 +322,11 @@ export const eventDictionary = {
         speaker4Name: "Исин Жігер Жумабекович",
         speaker4Role: "Медицина ғылымдарының магистрі",
         speaker4Topic: "Дауыс қатпарларының екіжақты параличін емдеу тәжірибесі",
+
+        registrationClosedTitle: "Орындар аяқталды",
+        registrationClosedText:
+            "Өкінішке қарай, негізгі орындар аяқталды. Өтініміңіз резерв тізіміне сақталды. Орын пайда болса, сізбен байланысамыз.",
+
     },
 
     en: {
@@ -422,8 +428,6 @@ export const eventDictionary = {
         successTitle: "Application sent",
         successText: "Thank you! The organizers will contact you to confirm participation.",
         errorText: "Could not send the application. Please try again later.",
-        registrationClosedText:
-            "Registration is closed, but your application has been saved. We will contact you if a seat becomes available.",
 
         notARobot: "I am not a robot",
         validationFullName: "Please enter a valid full name",
@@ -481,5 +485,9 @@ export const eventDictionary = {
 
         roomLabel: "Room",
         roomValue: "09 07",
+
+        registrationClosedTitle: "Seats are full",
+        registrationClosedText:
+            "Unfortunately, all main seats are already full. Your application has been saved to the waiting list. We will contact you if a seat becomes available.",
     },
 } as const;
