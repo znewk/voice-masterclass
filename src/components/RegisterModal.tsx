@@ -109,7 +109,7 @@ export const RegisterModal = ({ open, lang, onOpenChange }: Props) => {
         }
 
         try {
-            const response = await fetch("/api/register", {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbyQBQ4Z-_8JLr8dhTptYbD22t4crGvVSUJNMlufJyQGMLQ-v_IvC1Cx0R1ClabFONDdaQ/exec", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
